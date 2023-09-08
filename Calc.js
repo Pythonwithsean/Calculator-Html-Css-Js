@@ -8,7 +8,7 @@ let num = "";
 let result = 0
 let operationValue = undefined
 
-equalsButton.addEventListener("click",()=>{
+equalsButton.addEventListener("mouseup",()=>{
    switch(operationValue){
       case "+":
          result += num
@@ -22,9 +22,13 @@ equalsButton.addEventListener("click",()=>{
       case "X":
          result *= num
    }
+   calcScreen.innerHTML = ""
+   calcScreen.innerHTML += result
 })
 
-calcScreen.
+function updateScreen(value){
+   calcScreen.innerHTML += value
+}
 
 
 calcScreen.addEventListener(num !== undefined,()=>{
@@ -32,24 +36,27 @@ calcScreen.addEventListener(num !== undefined,()=>{
 })
 
 numButtons.forEach(button=>{
-   button.addEventListener("click",()=>{
+   button.addEventListener("mouseup",()=>{
       num += button.textContent
       num = parseInt(num)
+      updateScreen(num)
    })
 })
 
 operationButton.forEach(operation =>{
-   operation.addEventListener("click",()=>{
+   operation.addEventListener("mouseup",()=>{
       operationValue = operation.textContent
       result += num
       num = ""
+      updateScreen(operationValue)
    })
 })
 
-clearButton.addEventListener("click",()=>{
+clearButton.addEventListener("mouseup",()=>{
    num = "";
    result = 0;
    operationValue = undefined
+   calcScreen.innerHTML = ""
 })
 
 
