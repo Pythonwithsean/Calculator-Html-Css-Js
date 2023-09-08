@@ -7,7 +7,8 @@ body{
    display: flex;
    padding: 0;
    margin: 0;
-   background-color: aquamarine;
+   background-color: rgba(159, 5, 23, 0.645);
+   flex-direction: column;
 }
 
 
@@ -16,7 +17,9 @@ body{
    margin: auto;
    margin-top: 100px;
    background-color: #ffffff;
-   box-shadow: 2px 2px 1px 1px black;
+   box-shadow: 5px 10px 2px 4px rgb(2, 140, 182);
+   border: 3px solid black;
+   border-radius: 5px
 
 }
 
@@ -25,7 +28,8 @@ body{
    grid-template-rows:minmax(130px,auto) repeat(5,100px);
    grid-template-columns: repeat(4,200px);
    gap:4px;
-   background-color:rgb(0, 0, 42);
+   background-color:red;
+   padding:5px
 }
 
 .grid_container > .screen{
